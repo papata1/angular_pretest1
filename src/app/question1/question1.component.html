@@ -1,0 +1,32 @@
+<div style="display: flex">
+    <div style="border-style: solid;width:200px;">
+        <input type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"  [formControl]="inputTextValue">
+    </div>
+    <div style="border-style: solid;width:100px;width: 100%;">
+        <select  [formControl]="dropdownValue">
+            <option value="1" selected>isPrime</option>
+            <option value="2">isFibonacci</option>
+        </select>
+    </div>
+    <div style="border-style: solid;width:300px;margin-left: auto; ">
+        {{ renderBoolean()  }}
+    </div>
+</div>
+
+
+
+<!-- <div style="display: flex">
+    <div style="border-style: solid;width:200px;">
+        <input type="text" [formControl]="inputTextValue">
+    </div>
+    <div style="border-style: solid;width:100px;">
+        <select  [formControl]="dropdownValue">
+            <option value="volvo">isPrime</option>
+            <option value="saab">isFibonacci</option>
+        </select>
+    </div>
+    <div style="border-style: solid;width:300px;margin-left: auto; ">
+        {{ inputTextValue.value  }}
+        {{ dropdownValue.value  }}
+    </div>
+</div> -->
