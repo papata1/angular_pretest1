@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class Question1Component implements OnInit {
   inputTextValue: FormControl = new FormControl();
-  dropdownValue: FormControl = new FormControl();
+  dropdownValue: FormControl = new FormControl(1);
 
   constructor() { }
 
@@ -18,6 +18,9 @@ export class Question1Component implements OnInit {
   renderBoolean():boolean {
     let resultBool = false;
     let input = Math.ceil(this.inputTextValue.value);
+    if (input < 0) {
+      input = 1;
+    }
     this.inputTextValue.setValue(input);
     if (this.dropdownValue.value == 1) {
       resultBool = this.isPrime(input)
